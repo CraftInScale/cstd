@@ -3,6 +3,7 @@
 #include "../../error.h"
 
 #include <fcntl.h>
+#include <unistd.h>
 
 int tcp_socket_setblocking(TcpSocket& socket, bool blocking)
 {

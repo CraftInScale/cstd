@@ -4,6 +4,8 @@
 #include "string/String.h"
 #include "collections/Vec.h"
 
+#include <errno.h>
+
 extern Vec cstd_error_providers;
 
 #define E_OK 0
