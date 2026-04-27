@@ -126,20 +126,18 @@ int freader_read_buf(FileReader& reader, uint8_t* buf, size_t buf_size, size_t& 
         size_t left_to_read = reader.buf_size - reader._read_offset;
         if (left_to_read > buf_size)
         {
-            memcpy(buf, reader.buf, left_to_read);
-            
-            reader._read_offset += left_to_read;
-            read_size += left_to_read;
-            
-            buf_size -= left_to_read;
-            buf += left_to_read;
-        }
-        else
-        {
-            memcpy(buf, reader.buf, buf_size);
+            memcpy(buf, reader.buf + reader._read_offset, buf_size);
             reader._read_offset += buf_size;
             read_size += buf_size;
             return E_OK;
+        }
+        else
+        {
+            memcpy(buf, reader.buf + reader._read_offset, left_to_read);
+            reader._read_offset += left_to_read;
+            read_size += left_to_read;
+            buf_size -= left_to_read;
+            buf += left_to_read;
         }
     }
 
