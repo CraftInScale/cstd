@@ -4,7 +4,7 @@
 
 #include <pthread.h>
 
-#define LOG_DEFAULT_LOG_FORMAT "%date% :: %lvl% : %name% / %tname% :: "
+#define LOG_DEFAULT_LOG_FORMAT "%datetime% :: %lvl% : %name% / %tname% :: "
 #define LOG_DEFAULT_DATE_FORMAT "Y-M-D h:m:s"
 #define LOG_DEFAULT_PASS_LEVEL LL_DEBUG
 
